@@ -1,0 +1,42 @@
+.productDetail{
+    border: 3px solid;
+    border-radius: 9px;
+    display: grid!important;
+    grid-template-columns: 450px 300px auto!important;
+    width: 1400px;
+    height: 450px;
+    margin: 10px;
+    text-align: center;
+}
+/* cambiar a px para usar en todos el mismo tamaño */
+.imgProductDetail{
+    margin-top: 8px;
+    width: 300px;
+    height: 400px; 
+}
+.itemDescription{
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* .itemDescription:hover{
+    zoom: 150%;
+} */
+.productData{
+    margin-top: 150px;
+    margin-left: 2px;
+}
+.productPrice{
+    margin-top: 70px;
+}
+.productPrice:hover{
+    color: blueviolet;
+}
+.productTipe:hover{
+    color: blueviolet;
+}
+.productModel:hover{
+    color: blueviolet;
+}
+.itemDescription{
+    margin-top: 30px;
+}

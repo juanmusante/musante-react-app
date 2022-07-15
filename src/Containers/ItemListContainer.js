@@ -4,10 +4,8 @@ import maquinas from "../Data/MockData";
 import ItemList from "../Components/ItemList";
 import Loading from "../Components/Loading";
 
-
 const ItemListContainer = ({ saludo }, props) => {
   const [productList, setProductList] = useState([]);
-
   const [loading, setLoading] = useState(true);
 
   function loadingChange(){
