@@ -11,11 +11,11 @@ import rotativa3 from "../assets/img/rotativa3.jpg";
 import rotativa4 from "../assets/img/rotativa4.jpg";
 import rotativa5 from "../assets/img/rotativa5.jpg";
 
-
 const maquinas = [
     {
         id: 1,
         tipo: "Rotativa",
+        categoryId: 1,
         modelo: "J4",
         precio: 10000,
         description: "Equipo robusto y liviano",
@@ -25,6 +25,7 @@ const maquinas = [
     {
         id: 2,
         tipo: "Rotativa",
+        categoryId: 1,
         modelo: "Z4",
         precio: 9000,
         description: "Nuestra última incorporación",
@@ -34,6 +35,7 @@ const maquinas = [
     {
         id: 3,
         tipo: "Rotativa",
+        categoryId: 1,
         modelo: "H0",
         precio: 7500,
         description: "Equipo de fibra de carbono",
@@ -43,6 +45,7 @@ const maquinas = [
     {
         id: 4,
         tipo: "Bobina",
+        categoryId: 2,
         modelo: "Esmeralda",
         precio: 12000,
         description: "Equipo tradicional y con estilo",
@@ -52,6 +55,7 @@ const maquinas = [
     {
         id: 5,
         tipo: "Bobina",
+        categoryId: 2,
         modelo: "León",
         precio: 6000,
         description: "Equipo estilo naked",
@@ -61,6 +65,7 @@ const maquinas = [
     {
         id: 6,
         tipo: "Bobina",
+        categoryId: 2,
         modelo: "Control",
         precio: 5000,
         description: "Equipo full black",
@@ -70,6 +75,7 @@ const maquinas = [
     {
         id: 7,
         tipo: "Bobina",
+        categoryId: 2,
         modelo: "Dragón",
         precio: 4500,
         description: "Equipo tradicional con arte dragón",
@@ -79,6 +85,7 @@ const maquinas = [
     {
         id: 8,
         tipo: "Bobina",
+        categoryId: 2,
         modelo: "Elfo",
         precio: 8600,
         description: "Equipo tradicional con arte élfica",
@@ -88,6 +95,7 @@ const maquinas = [
     {
         id: 9,
         tipo: "Lápiz",
+        categoryId: 3,
         modelo: "B12",
         precio: 9800,
         description: "Nueva incorporación de máquina tipo lapiz",
@@ -97,6 +105,7 @@ const maquinas = [
     {
         id: 10,
         tipo: "Lápiz",
+        categoryId: 3,
         modelo: "M11",
         precio: 13000,
         description: "Equipo con mayor robustez y zona de agarre",
@@ -106,6 +115,7 @@ const maquinas = [
     {
         id: 11,
         tipo: "Rotativa",
+        categoryId: 1,
         modelo: "F2",
         precio: 6700,
         description: "Equipo liviano con estilo élfico",
@@ -115,6 +125,7 @@ const maquinas = [
     {
         id: 12,
         tipo: "Rotativa",
+        categoryId: 1,
         modelo: "F5",
         precio: 9400,
         description: "Equipo liviano adaptable a distintas puntas",
