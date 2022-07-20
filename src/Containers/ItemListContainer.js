@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ItemCount from "../Components/ItemCount";
 import maquinas from "../Data/MockData";
 import ItemList from "../Components/ItemList";
 import CustomFetch from "../Utils/CustomFetch";
@@ -12,15 +11,14 @@ const ItemListContainer = () => {
   const { id } = useParams();
 
   useEffect(() =>{
-    if (id === undefined){
+    if (id === undefined) {
       CustomFetch(maquinas)
         .then(result => setProductList(result))
         .catch(err => console.log(err))
     } else {
         CustomFetch(maquinas.filter(item => item.categoryId === parseInt(id)))
-          .then(result => setProductList(result))
+          .then(result => setProductList(result), console.log(id))
           .catch(err => console.log(err))
-
     }
   }, [id]);
 
@@ -40,7 +38,6 @@ const ItemListContainer = () => {
       <div className="products">
         <ItemList items={productList} />
       </div>
-      {/* <ItemCount stock="5" initial="1" /> */}
     </>
   );
 };

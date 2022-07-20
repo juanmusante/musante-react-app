@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
           .catch(err => console.log(err))
       } else {
           CustomFetch(maquinas.filter(item => item.id === parseInt(id)))
-            .then(result => setProductList(result))
+            .then(result => setProductList(result), console.log(id))
             .catch(err => console.log(err))
   
       }
