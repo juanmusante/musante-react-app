@@ -20,6 +20,7 @@ const ItemListContainer = () => {
         CustomFetch(maquinas.filter(item => item.categoryId === parseInt(id)))
           .then(result => setProductList(result))
           .catch(err => console.log(err))
+
     }
   }, [id]);
 
@@ -36,11 +37,10 @@ const ItemListContainer = () => {
   
   return (
     <>
-      <div className="ItemListContainer"></div>
       <div className="products">
         <ItemList items={productList} />
       </div>
-      <ItemCount stock="5" initial="1" />
+      {/* <ItemCount stock="5" initial="1" /> */}
     </>
   );
 };

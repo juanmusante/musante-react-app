@@ -21,6 +21,14 @@ body {
     height: 250px;
     width: 250px;
 }
+.infoButton{
+  font-size: 20px;
+  border-radius: 10px;
+  margin: 0%;
+}
+.infoButton:hover{
+  color: blueviolet;
+}
 .products{
     display: grid!important;
     grid-template-columns: auto auto auto!important;
