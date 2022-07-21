@@ -10,13 +10,13 @@ function NavBar(){
             <nav className="navegador">
                 <ul className="ul">
                     <li className="li">
-                        <Link to='category/1'>Rotativas</Link>
+                        <Link to='/category/1'>Rotativas</Link>
                     </li>
                     <li className="li">
-                        <Link to='category/2'>Bobina</Link>
+                        <Link to='/category/2'>Bobina</Link>
                     </li>
                     <li className="li">
-                        <Link to='category/3'>Lápiz</Link>
+                        <Link to='/category/3'>Lápiz</Link>
                     </li>
                 </ul>
             </nav>

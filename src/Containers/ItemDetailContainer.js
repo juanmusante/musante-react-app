@@ -4,7 +4,7 @@ import ItemDetail from '../Components/ItemDetail';
 import Loading from "../Components/Loading";
 import ItemCount from '../Components/ItemCount';
 import { useParams } from "react-router";
-import CustomFetch from "../Utils/CustomFetch";
+// import CustomFetch from "../Utils/CustomFetch";
 
 const ItemDetailContainer = () => {
     const [productList, setProductList] = useState({});
@@ -13,18 +13,14 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(() =>{
-      if (id === undefined){
-        CustomFetch(maquinas)
-          .then(result => setProductList(result))
-          .catch(err => console.log(err))
-      } else {
-          CustomFetch(maquinas.filter(item => item.id === parseInt(id)))
-            .then(result => setProductList(result), console.log(id))
-            .catch(err => console.log(err))
-  
-      }
-    }, [id]);
+      const myPromise = new Promise((resolve, reject) => {
+        resolve(maquinas[id])
+      })
 
+      myPromise.then((res) => {
+        setProductList(res)
+      })
+    }, [id])
 
     function loadingChange(){
         setLoading(false);

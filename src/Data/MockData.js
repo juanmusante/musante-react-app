@@ -13,7 +13,7 @@ import rotativa5 from "../assets/img/rotativa5.jpg";
 
 const maquinas = [
     {
-        id: 1,
+        id: 0,
         tipo: "Rotativa",
         categoryId: 1,
         modelo: "J4",
@@ -23,7 +23,7 @@ const maquinas = [
         img: rotativa1
     },
     {
-        id: 2,
+        id: 1,
         tipo: "Rotativa",
         categoryId: 1,
         modelo: "Z4",
@@ -33,7 +33,7 @@ const maquinas = [
         img: rotativa2
     },
     {
-        id: 3,
+        id: 2,
         tipo: "Rotativa",
         categoryId: 1,
         modelo: "H0",
@@ -43,7 +43,7 @@ const maquinas = [
         img: rotativa3
     },
     {
-        id: 4,
+        id: 3,
         tipo: "Bobina",
         categoryId: 2,
         modelo: "Esmeralda",
@@ -53,7 +53,7 @@ const maquinas = [
         img: bobina1
     },
     {
-        id: 5,
+        id: 4,
         tipo: "Bobina",
         categoryId: 2,
         modelo: "León",
@@ -63,7 +63,7 @@ const maquinas = [
         img: bobina2
     },
     {
-        id: 6,
+        id: 5,
         tipo: "Bobina",
         categoryId: 2,
         modelo: "Control",
@@ -73,7 +73,7 @@ const maquinas = [
         img: bobina3
     },
     {
-        id: 7,
+        id: 6,
         tipo: "Bobina",
         categoryId: 2,
         modelo: "Dragón",
@@ -83,7 +83,7 @@ const maquinas = [
         img: bobina4
     },
     {
-        id: 8,
+        id: 7,
         tipo: "Bobina",
         categoryId: 2,
         modelo: "Elfo",
@@ -93,7 +93,7 @@ const maquinas = [
         img: bobina5
     },
     {
-        id: 9,
+        id: 8,
         tipo: "Lápiz",
         categoryId: 3,
         modelo: "B12",
@@ -103,7 +103,7 @@ const maquinas = [
         img: lapiz1
     },
     {
-        id: 10,
+        id: 9,
         tipo: "Lápiz",
         categoryId: 3,
         modelo: "M11",
@@ -113,7 +113,7 @@ const maquinas = [
         img: lapiz2
     },
     {
-        id: 11,
+        id: 10,
         tipo: "Rotativa",
         categoryId: 1,
         modelo: "F2",
@@ -123,7 +123,7 @@ const maquinas = [
         img: rotativa4
     },
     {
-        id: 12,
+        id: 11,
         tipo: "Rotativa",
         categoryId: 1,
         modelo: "F5",
