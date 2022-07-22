@@ -7,7 +7,7 @@ import { useParams } from "react-router";
 // import CustomFetch from "../Utils/CustomFetch";
 
 const ItemDetailContainer = () => {
-    const [productList, setProductList] = useState({});
+    const [productDetail, setProductDetail] = useState({});
     const [loading, setLoading] = useState(true);
 
     const { id } = useParams();
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
       })
 
       myPromise.then((res) => {
-        setProductList(res)
+        setProductDetail(res)
       })
     }, [id])
 
@@ -36,7 +36,7 @@ const ItemDetailContainer = () => {
     return (
         <>
             <div className="products">
-            <ItemDetail product={productList} />
+            <ItemDetail product={productDetail} />
             </div>
             <ItemCount stock="5" initial="1" />
         </>
