@@ -5,8 +5,9 @@ import Loading from "../Components/Loading";
 import { useParams } from "react-router";
 
 const ItemListContainer = () => {
-  const [productList, setProductList] = useState([]);
+  const [productList, setProductList] = useState({});
   const [loading, setLoading] = useState(true);
+  
   const { categoryId } = useParams();
 
   useEffect(() =>{
@@ -14,15 +15,15 @@ const ItemListContainer = () => {
       resolve(maquinas[categoryId])
     })
 
-    myPromise.then((res) => {
-      setProductList(res)
-    })
+    myPromise
+    .then((res) => setProductList(res))
+
   }, [categoryId])
 
   function loadingChange(){
     setLoading(false);
   }
-  setTimeout(loadingChange, 2000);
+  setTimeout(loadingChange, 1000);
 
   if(loading){
     return(
