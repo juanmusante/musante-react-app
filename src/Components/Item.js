@@ -14,9 +14,7 @@ const Item = ({ product }) => {
         <h3>Modelo {product.modelo}</h3>
         <h5>${product.precio}.-</h5>
         <p>Stock Disponible: {product.stock}</p>
-        {/* <p>{product.description}</p> */}
       </div>
-      
     </div>
   );
 };

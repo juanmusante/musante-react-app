@@ -4,23 +4,22 @@ import ItemDetail from '../Components/ItemDetail';
 import Loading from "../Components/Loading";
 import ItemCount from '../Components/ItemCount';
 import { useParams } from "react-router";
-// import CustomFetch from "../Utils/CustomFetch";
 
 const ItemDetailContainer = () => {
     const [productDetail, setProductDetail] = useState({});
     const [loading, setLoading] = useState(true);
 
-    const { id } = useParams();
+    const { idItem } = useParams();
 
     useEffect(() =>{
       const myPromise = new Promise((resolve, reject) => {
-        resolve(maquinas[id])
+        resolve(maquinas[idItem])
       })
 
       myPromise.then((res) => {
         setProductDetail(res)
       })
-    }, [id])
+    }, [idItem])
 
     function loadingChange(){
         setLoading(false);

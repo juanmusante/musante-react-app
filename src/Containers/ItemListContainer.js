@@ -5,32 +5,42 @@ import Loading from "../Components/Loading";
 import { useParams } from "react-router";
 
 const ItemListContainer = () => {
-  const [productList, setProductList] = useState({});
+  const [productList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
-  
-  const { categoryId } = useParams();
 
-  useEffect(() =>{
-    const myPromise = new Promise((resolve, reject) => {
-      resolve(maquinas[categoryId])
-    })
+  const { idCategory } = useParams();
 
-    myPromise
-    .then((res) => setProductList(res))
+  console.log(idCategory);
 
-  }, [categoryId])
+  useEffect(() => {
+    const productPromise = (task) => {
+      return new Promise((resolve, reject) => {
+        resolve(task);
+      });
+    }
 
-  function loadingChange(){
+    if (idCategory === undefined) {
+      productPromise(maquinas)
+        .then(datos => { setProductList(datos) })
+    } else {
+      productPromise(maquinas.filter(item => item.categoryId === idCategory))
+        .then(datos => { setProductList(datos) })
+    }
+  }, [idCategory])
+
+  console.log(productList)
+
+  function loadingChange() {
     setLoading(false);
   }
   setTimeout(loadingChange, 1000);
 
-  if(loading){
-    return(
+  if (loading) {
+    return (
       <Loading />
     )
   }
-  
+
   return (
     <>
       <div className="products">
