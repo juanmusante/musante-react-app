@@ -5,7 +5,8 @@ import App from './App';
 import './Styles/NavBar.css';
 import './Styles/ItemListContainer.css';
 import './Styles/ItemCount.css';
-import './Styles/ItemDetail.css'
+import './Styles/ItemDetail.css';
+import './Styles/CheckOutBtn.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

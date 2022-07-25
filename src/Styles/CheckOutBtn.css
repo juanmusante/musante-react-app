@@ -1,0 +1,8 @@
+.btnCheckOut{
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 30px;
+    width: 300px!important;
+    background-color: #fd0d0d;
+    color: white;
+}

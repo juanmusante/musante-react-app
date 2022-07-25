@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './Components/NavBar.js';
 import ItemDetailContainer from "./Containers/ItemDetailContainer";
 import ItemListContainer from './Containers/ItemListContainer.js';
+import Cart from "./Components/CheckOutBtn";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<ItemListContainer />}/>
         <Route path="/category/:idCategory" element={<ItemListContainer />} />
         <Route path="/item/:idItem" element={<ItemDetailContainer />} />
+        <Route path="/Cart/" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );

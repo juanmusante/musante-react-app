@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import maquinas from "../Data/MockData";
 import ItemDetail from '../Components/ItemDetail';
 import Loading from "../Components/Loading";
-import ItemCount from '../Components/ItemCount';
 import { useParams } from "react-router";
 
 const ItemDetailContainer = () => {
@@ -37,7 +36,6 @@ const ItemDetailContainer = () => {
             <div className="products">
             <ItemDetail product={productDetail} />
             </div>
-            <ItemCount stock="5" initial="1" />
         </>
     );
       

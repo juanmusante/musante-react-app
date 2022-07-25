@@ -1,38 +1,27 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
-export function ItemCount({stock, initial}) {
-    const [number, setNumber] = useState (parseInt(initial));
-    
+export function ItemCount({stock = 0, initial = 0, onAdd, props}) {
+    const [number, setNumber] = useState (0);
+
     const incraese = () => {
-        while (stock > number)
-        if (stock >= 1){
+        if (number < stock){
             setNumber(number + 1)
-            break;
         }
     }
     const decrease = () => {
-        while (number <= stock && number > 0)
-        if (stock >= 1){
+        if (number > initial){
             setNumber(number - 1)
-            break;
         }
-    }
-    const onAdd = () => {
-        stock = (stock - number);
-        if(number === 0){
-            alert('No hay cantidad seleccionada')
-        } else {
-            alert(`Se agregaron al carrito ${number} unidades`);
-        }
-        // console.log(stock)
     }
 
     return (
         <nav className='counter'>
             <div className='view'>
-                <button className='button' onClick={incraese}> + </button><p className='text'>{number}</p><button className='button' onClick={decrease}> - </button>
+                <button className='button' onClick={incraese}> + </button>
+                <p className='text'>{number}</p>
+                <button className='button' onClick={decrease}> - </button>
             </div>
-            <button className='buttonShop' onClick={onAdd}>Agregar Al Carrito</button>
+           <button className='buttonShop' onClick={() => onAdd(number)}>ADD TO CART</button>
         </nav>
     );
 }

@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemCount from '../Components/ItemCount';
+import CheckOutBtn from './CheckOutBtn';
 
 const ItemDetail = ({ product }) => {
+    const [quantity, setQuantity] = useState(true)
+
+    const onAdd = (qty) => {
+        alert("Seleccionaste " + qty + " máquinas.");
+        if(qty !== 0){
+            setQuantity(false)
+        }
+    }
+
   return (
     <>
     <div>
@@ -16,10 +27,16 @@ const ItemDetail = ({ product }) => {
             </div>
             <div className='itemDescription'>
                 <p>~{product.description}~</p>
+                {
+                    quantity
+                    ? <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
+                    : <CheckOutBtn />
+                }
             </div>
             <div>
                 <p>Stock Disponible: {product.stock}</p>
             </div>
+            
         </div>
     </div>
     </>
