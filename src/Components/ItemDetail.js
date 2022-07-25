@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCount from '../Components/ItemCount';
-import CheckOutBtn from './CheckOutBtn';
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ product }) => {
     const [quantity, setQuantity] = useState(true)
@@ -30,7 +30,9 @@ const ItemDetail = ({ product }) => {
                 {
                     quantity
                     ? <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
-                    : <CheckOutBtn />
+                    :   <div className='btnCheckOut'>
+                         <Link to={'/Cart'}>CHECK OUT</Link>
+                        </div>
                 }
             </div>
             <div>
