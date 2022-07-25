@@ -6,9 +6,9 @@ import CheckOutBtn from './CheckOutBtn';
 const ItemDetail = ({ product }) => {
     const [quantity, setQuantity] = useState(true)
 
-    const onAdd = (qty) => {
-        alert("Seleccionaste " + qty + " máquinas.");
-        if(qty !== 0){
+    const onAdd = (quantityToAdd) => {
+        alert("Seleccionaste " + quantityToAdd + " máquinas.");
+        if(quantityToAdd !== 0){
             setQuantity(false)
         }
     }

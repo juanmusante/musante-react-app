@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   return (
     <>
-      <Link to={'/Cart'} className='btnCheckOut'>CHECK OUT</Link>
+      <div className='btnCheckOut'>
+        <Link to={'/Cart'}>CHECK OUT</Link>
+      </div>
     </>
     // onClick={() => onAdd(number)}
   )
