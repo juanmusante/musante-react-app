@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
     function loadingChange(){
         setLoading(false);
     }
-    setTimeout(loadingChange, 2000);
+    setTimeout(loadingChange, 500);
 
     if(loading){
         return(

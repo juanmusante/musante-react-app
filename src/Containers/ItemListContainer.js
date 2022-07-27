@@ -10,8 +10,6 @@ const ItemListContainer = () => {
 
   const { idCategory } = useParams();
 
-  console.log(idCategory);
-
   useEffect(() => {
     const productPromise = (task) => {
       return new Promise((resolve, reject) => {
@@ -21,19 +19,31 @@ const ItemListContainer = () => {
 
     if (idCategory === undefined) {
       productPromise(maquinas)
-        .then(datos => { setProductList(datos) })
+        .then(() => {
+          const aux = <ItemList products={maquinas} />;
+          setProductList(aux);
+        })
+        .catch((err) => alert (err));
     } else {
-      productPromise(maquinas.filter(item => item.categoryId === idCategory))
-        .then(datos => { setProductList(datos) })
+      productPromise(maquinas)
+        .then(() => {
+          const aux = (
+            <ItemList
+              products={maquinas.filter(
+                (item) => item.categoryId === parseInt(idCategory)
+              )}
+            />
+          );
+          setProductList(aux);
+        })
+        .catch((err) => alert(err))
     }
-  }, [idCategory])
-
-  console.log(productList)
+  }, [idCategory]);
 
   function loadingChange() {
     setLoading(false);
   }
-  setTimeout(loadingChange, 1000);
+  setTimeout(loadingChange, 500);
 
   if (loading) {
     return (
