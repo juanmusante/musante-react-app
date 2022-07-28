@@ -2,6 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
+import maquinas from "../Data/MockData";
 
 const NavBar = ({ product }) => {
     return(
@@ -10,13 +11,13 @@ const NavBar = ({ product }) => {
             <nav className="navegador">
                 <ul className="ul">
                     <li className="li">
-                        <Link to='/category/1'>Rotativas</Link>
+                        <Link to={`/category/${maquinas.categoryId}`}>Rotativas</Link>
                     </li>
                     <li className="li">
-                        <Link to='/category/2'>Bobina</Link>
+                        <Link to={`/category/${maquinas.categoryId}`}>Bobina</Link>
                     </li>
                     <li className="li">
-                        <Link to='/category/3'>Lápiz</Link>
+                        <Link to={`/category/${maquinas.categoryId}`}>Lápiz</Link>
                     </li>
                 </ul>
             </nav>

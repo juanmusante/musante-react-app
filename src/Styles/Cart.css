@@ -9,6 +9,7 @@ text-align: center;
     width: 1200px;
     height: 250px;
     margin-left: 125px;
+    margin-top: 2px;
 }
 .imgCartDetail{
     margin-top: 8px;
@@ -31,4 +32,13 @@ text-align: center;
 }
 .cartModel:hover{
     color: blueviolet;
+}
+.crossBtn{
+    margin-top: 20px;
+    margin-left: 300px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    border-color: white;
 }

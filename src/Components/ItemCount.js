@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export function ItemCount({stock = 0, initial = 0, onAdd, props}) {
+export function ItemCount({stock = 0, initial = 0, onAdd}) {
     const [number, setNumber] = useState (0);
 
     const incraese = () => {

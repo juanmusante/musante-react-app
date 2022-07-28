@@ -1,6 +1,4 @@
 .productDetail{
-    border: 3px solid;
-    border-radius: 9px;
     display: grid!important;
     grid-template-columns: 450px 300px auto!important;
     width: 1400px;

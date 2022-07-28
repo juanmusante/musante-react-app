@@ -4,15 +4,16 @@ import ItemCount from '../Components/ItemCount';
 import { Link } from "react-router-dom";
 import { CartContext } from '../Components/CartContext';
 
-const ItemDetail = ({ product }) => {
+const ItemDetail = ({ product, number }) => {
     const [quantity, setQuantity] = useState(true)
     const test = useContext(CartContext)
 
     const onAdd = (quantityToAdd) => {
-        alert("Seleccionaste " + quantityToAdd + " máquinas.");
         if(quantityToAdd !== 0){
             setQuantity(false);
-            test.addToCart(product);
+            test.addItem(product);
+        }else{
+            alert("No seleccionaste máquinas");
         }
     }
 
