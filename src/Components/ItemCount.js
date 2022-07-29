@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export function ItemCount({stock = 0, initial = 0, onAdd}) {
+export function ItemCount({stock = 0, initial = 1, onAdd}) {
     const [number, setNumber] = useState (0);
 
     const incraese = () => {
@@ -21,7 +21,7 @@ export function ItemCount({stock = 0, initial = 0, onAdd}) {
                 <p className='text'>{number}</p>
                 <button className='button' onClick={decrease}> - </button>
             </div>
-           <button className='buttonShop' onClick={() => onAdd(number)}>ADD TO CART</button>
+           <button className='buttonShop' disabled={number === 0} onClick={() => onAdd(number)}>ADD TO CART</button>
         </nav>
     );
 }

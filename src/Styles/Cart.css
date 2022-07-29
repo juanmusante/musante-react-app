@@ -2,14 +2,14 @@
 text-align: center;
 }
 .cartDetail{
-    border: 3px solid;
+    border: 2px solid;
     border-radius: 9px;
     display: grid!important;
     grid-template-columns: 450px 300px auto!important;
     width: 1200px;
     height: 250px;
     margin-left: 125px;
-    margin-top: 2px;
+    margin-top: 5px;
 }
 .imgCartDetail{
     margin-top: 8px;
@@ -33,7 +33,7 @@ text-align: center;
 .cartModel:hover{
     color: blueviolet;
 }
-.crossBtn{
+.deleteBtn{
     margin-top: 20px;
     margin-left: 300px;
     font-size: 20px;

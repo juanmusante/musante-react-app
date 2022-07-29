@@ -3,19 +3,29 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCount from '../Components/ItemCount';
 import { Link } from "react-router-dom";
 import { CartContext } from '../Components/CartContext';
+// import { Button } from 'react-bootstrap';
 
 const ItemDetail = ({ product, number }) => {
     const [quantity, setQuantity] = useState(true)
     const test = useContext(CartContext)
 
-    const onAdd = (quantityToAdd) => {
-        if(quantityToAdd !== 0){
+    const onAdd = (qty) => {
+        if(qty !== 0){
             setQuantity(false);
-            test.addItem(product);
+            test.addItem(product, qty);
         }else{
             alert("No seleccionaste máquinas");
         }
     }
+
+    // const onAdd = (qty) => {
+    //     if(qty !== 0){
+    //         setQuantity(false);
+    //         test.addItem(product, qty);
+    //     }else{
+    //         alert("No seleccionaste máquinas");
+    //     }
+    // }
 
   return (
     <>
