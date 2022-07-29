@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { CartContext } from "./CartContext";
 
 const CartWidget = () => {
+
+    const test = useContext(CartContext);
     return (
         <>
         <button type="button" className="btn btn-primary">
