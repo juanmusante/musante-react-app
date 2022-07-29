@@ -7,7 +7,7 @@ const CartContextProvider = ({ children }) => {
 
     const addItem = (product, qty) => {
         let isInCart = (id) => cartList.includes(product => product.id === id) ? false : true;
-        if(isInCart(false)){
+        if(isInCart(product.id)){
             setCartList([...cartList, {
                 id: product.id, 
                 tipo: product.tipo, 
@@ -17,7 +17,7 @@ const CartContextProvider = ({ children }) => {
                 qty: qty
             }])
         }else{
-            setCartList([...cartList, {...product, qty}])
+            setCartList([...cartList, {...product, qty:qty}])
         }
     }
 
