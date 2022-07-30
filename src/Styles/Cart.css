@@ -1,6 +1,29 @@
 .cartHeader{
 text-align: center;
 }
+.startBuyingDiv{
+    text-align: center;
+}
+.startBuying{
+    border: 2px solid;
+    border-radius: 9px;
+    background-color: transparent;
+    height: 20px;
+    padding: 4px;
+}
+.startBuying:hover{
+    background-color: gold;
+    color: white;
+}
+.btnVaciar{
+    border: 2px solid;
+    border-radius: 9px;
+    background-color: transparent;
+}
+.btnVaciar:hover{
+    background-color: red;
+    color: white;
+}
 .cartDetail{
     border: 2px solid;
     border-radius: 9px;
@@ -37,10 +60,13 @@ text-align: center;
     margin-top: 20px;
     margin-left: 300px;
     font-size: 20px;
+    border: 2px solid;
+    border-radius: 9px;
+    background-color: transparent;
+}
+.deleteBtn:hover{
     background-color: red;
     color: white;
-    border-radius: 10px;
-    border-color: white;
 }
 .btnCheckOut{
     margin-top: 20px;
@@ -63,4 +89,30 @@ text-align: center;
     border: 2px solid;
     border-radius: 5px;
     border-color: blueviolet;
+}
+.orderSumary{
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    padding-left: 0px;
+}
+.total{
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-bottom: 100px;
+}
+.divTotal{
+    display: grid;
+    grid-template-columns: 1000px 200px;
+}
+.btnPay{
+    border: 2px solid;
+    border-radius: 9px;
+    background-color: transparent;
+    padding: 2px;
+    height: 50px;
+}
+.btnPay:hover{
+    background-color: black;
+    color: white;
 }

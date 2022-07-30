@@ -18,15 +18,6 @@ const ItemDetail = ({ product, number }) => {
         }
     }
 
-    // const onAdd = (qty) => {
-    //     if(qty !== 0){
-    //         setQuantity(false);
-    //         test.addItem(product, qty);
-    //     }else{
-    //         alert("No seleccionaste máquinas");
-    //     }
-    // }
-
   return (
     <>
     <div>

@@ -6,18 +6,21 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     const addItem = (product, qty) => {
-        let isInCart = (id) => cartList.includes(product => product.id === id) ? false : true;
-        if(isInCart(product.id)){
+        let found = cartList.find(item => item.id === product.id)
+        if(found === undefined){
             setCartList([...cartList, {
                 id: product.id, 
                 tipo: product.tipo, 
                 modelo: product.modelo, 
                 precio: product.precio,
                 img: product.img[0],
+                stock: product.stock,
                 qty: qty
             }])
+            // aca se graba item y qty en el localStorage
         }else{
-            setCartList([...cartList, {...product, qty:qty}])
+            found.qty += qty;
+            // found.qty -= stock;
         }
     }
 
@@ -30,12 +33,22 @@ const CartContextProvider = ({ children }) => {
     const clear = () => {
         setCartList([])
     }
+    const calcItemsQty = () => {
+        let qtys = cartList.map(product => product.qty);
+        return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+    }
+    const calcItemsTotal = () => {
+        let total = cartList.map(product => product.precio);
+        return total.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+    }
 
     return (
         <CartContext.Provider value={{cartList,
             addItem,
             removeItem,
-            clear}}>
+            clear,
+            calcItemsQty,
+            calcItemsTotal}}>
             { children }
         </CartContext.Provider>
     )
