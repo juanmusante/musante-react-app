@@ -42,3 +42,25 @@ text-align: center;
     border-radius: 10px;
     border-color: white;
 }
+.btnCheckOut{
+    margin-top: 20px;
+    margin-left: 200px;
+    border-radius: 8px;
+    border-width: 0;
+    font-size: 30px;
+    width: 250px;
+}
+.btnCheckOut:hover{
+    background-color: #78f586;
+}
+.btnKeepBuying{
+    font-size: 20px;
+    width: 250px;
+    margin-top: 20px;
+    margin-left: 200px;
+}
+.btnKeepBuying:hover{
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: blueviolet;
+}

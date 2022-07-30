@@ -6,7 +6,6 @@ import './Styles/NavBar.css';
 import './Styles/ItemListContainer.css';
 import './Styles/ItemCount.css';
 import './Styles/ItemDetail.css';
-import './Styles/CheckOutBtn.css';
 import './Styles/Cart.css';
 
 
