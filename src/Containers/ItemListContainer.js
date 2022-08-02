@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import maquinas from "../Data/MockData";
 import ItemList from "../Components/ItemList";
 import Loading from "../Components/Loading";
 import { useParams } from "react-router";
+import { firestoreFetch } from "../Data/firestoreFetch";
+// import { db } from "../Data/firebaseConfig";
+// import { collection, getDocs } from "firebase/firestore";
+
 
 const ItemListContainer = () => {
   const [productList, setProductList] = useState([]);
@@ -11,18 +14,10 @@ const ItemListContainer = () => {
   const { idCategory } = useParams();
 
   useEffect(() => {
-    const getProjectList = new Promise((resolve, reject) =>{
-      setTimeout(() => {
-        resolve(maquinas);
-      }, 1);
-    });
-    if(idCategory) {
-      getProjectList.then(res => setProductList(res.filter(item => item.categoryId === parseInt(idCategory))));
-      console.log(getProjectList)
-    }else{
-      getProjectList.then(res => setProductList(res));
-    }
-  },[idCategory])
+    firestoreFetch(idCategory)
+      .then(res => setProductList(res))
+      .catch(err => console.log(err))
+  }, [idCategory])
 
   function loadingChange() {
     setLoading(false);
