@@ -35,9 +35,13 @@ const CartContextProvider = ({ children }) => {
         let qtys = cartList.map(product => product.qty);
         return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
     }
+    const calcEachTotal = (id) =>{
+        let index = cartList.map(product => product.id).indexOf(id);
+        return cartList[index].precio * cartList[index].qty;
+    }
     const calcItemsTotal = () => {
-        let total = cartList.map(product => product.precio);
-        return total.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+        let total = cartList.map(product => calcEachTotal(product.id));
+        return total.reduce((previousValue, currentValue) => previousValue + currentValue);
     }
 
     return (
