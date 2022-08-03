@@ -27,8 +27,6 @@ const CartContextProvider = ({ children }) => {
     const removeItem = (id) => {
         let newState = cartList.filter(product => product.id !== id);
         setCartList(newState);
-        
-        
     }
     const clear = () => {
         setCartList([])

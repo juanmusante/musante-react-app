@@ -1,15 +1,16 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../Components/CartContext'
 import { Link } from "react-router-dom";
-import { serverTimestamp } from 'firebase/firestore';
+import { collection, serverTimestamp, setDoc, doc, increment, updateDoc } from 'firebase/firestore';
+import { db } from "../Data/firebaseConfig";
 
-const Cart = ({ product }) => {
+const Cart = () => {
 
   const test = useContext(CartContext)
   // aca se comprueba si el localStorage esta vacio o no, para mostrarlo
 
   const createOrder = () => {
-    let itemsInCart = test.cartList.array.map(item => ({
+    let itemsInCart = test.cartList.map(item => ({
       id: item.id,
       title: item.modelo,
       price: item.precio,
@@ -25,13 +26,31 @@ const Cart = ({ product }) => {
       items: itemsInCart,
       total: test.calcItemsTotal()
     }
-    console.log(order)
+    // console.log(order)
+    const createOrderInFirestore = async () => {
+      const newOrderRef = doc(collection(db, "orders"))
+      await setDoc(newOrderRef, order)
+      return newOrderRef;
+    }
 
+    createOrderInFirestore()
+      .then(res => alert('Tu orden fue creada con el siguiente ID:' + res.id))
+      .catch(err => console.log(err))
+
+      test.cartList.forEach(async (item) => {
+        const itemRef = doc(db, "products", item.id)
+        await updateDoc(itemRef, {
+          stock: increment(-item.qty)
+        })
+      })
+
+
+    test.clear()
   }
 
 
   return (
-    <> 
+    <>
       <div className='cartHeader'>
         <h1>TU CARRITO</h1>
         {test.cartList < 1
