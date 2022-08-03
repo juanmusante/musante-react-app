@@ -1,15 +1,37 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../Components/CartContext'
 import { Link } from "react-router-dom";
+import { serverTimestamp } from 'firebase/firestore';
 
 const Cart = ({ product }) => {
 
   const test = useContext(CartContext)
-
   // aca se comprueba si el localStorage esta vacio o no, para mostrarlo
 
+  const createOrder = () => {
+    let itemsInCart = test.cartList.array.map(item => ({
+      id: item.id,
+      title: item.modelo,
+      price: item.precio,
+      qty: item.qty
+    }))
+    let order = {
+      buyer: {
+        email: "richard@supermail.com",
+        name: "Ricardo Sarambrotto",
+        phone: "28873649"
+      },
+      date: serverTimestamp(),
+      items: itemsInCart,
+      total: test.calcItemsTotal()
+    }
+    console.log(order)
+
+  }
+
+
   return (
-    <>
+    <> 
       <div className='cartHeader'>
         <h1>TU CARRITO</h1>
         {test.cartList < 1
@@ -44,8 +66,8 @@ const Cart = ({ product }) => {
       <div className='divTotal'>
         <h3 className='total'>TOTAL: ${test.calcItemsTotal()}.-</h3>
         {test.cartList < 1
-        ?  ''
-        :<button className='btnPay'>REALIZAR PAGO</button>}
+          ? ''
+          : <button onClick={createOrder} className='btnPay'>CREAR ORDEN</button>}
       </div>
     </>
   )
