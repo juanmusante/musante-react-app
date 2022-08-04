@@ -5,7 +5,6 @@ import { collection, serverTimestamp, setDoc, doc, increment, updateDoc } from '
 import { db } from "../Data/firebaseConfig";
 
 const Cart = () => {
-
   const test = useContext(CartContext)
   // aca se comprueba si el localStorage esta vacio o no, para mostrarlo
 
@@ -16,6 +15,7 @@ const Cart = () => {
       price: item.precio,
       qty: item.qty
     }))
+
     let order = {
       buyer: {
         email: "richard@supermail.com",
@@ -37,28 +37,29 @@ const Cart = () => {
       .then(res => alert('Tu orden fue creada con el siguiente ID:' + res.id))
       .catch(err => console.log(err))
 
-      test.cartList.forEach(async (item) => {
-        const itemRef = doc(db, "products", item.id)
-        await updateDoc(itemRef, {
-          stock: increment(-item.qty)
-        })
+    test.cartList.forEach(async (item) => {
+      const itemRef = doc(db, "products", item.id)
+      await updateDoc(itemRef, {
+        stock: increment(-item.qty)
       })
+    })
 
-
+    // vaciar carrito luego de crear orden
     test.clear()
   }
-
 
   return (
     <>
       <div className='cartHeader'>
         <h1>TU CARRITO</h1>
-        {test.cartList < 1
-          ? <div className='startBuyingDiv'>
-            <p>~ CARRITO VACIO ~</p>
-            <Link className='startBuying' to={'/'}>INICIA TU COMPRA</Link>
-          </div>
-          : <button className='btnVaciar' onClick={test.clear}>VACIAR CARRITO</button>}
+        {
+          test.cartList < 1
+            ? <div className='startBuyingDiv'>
+              <p>~ CARRITO VACIO ~</p>
+              <Link className='startBuying' to={'/'}>INICIA TU COMPRA</Link>
+            </div>
+            : <button className='btnVaciar' onClick={test.clear}>VACIAR CARRITO</button>
+        }
       </div>
       {
         test.cartList.length > 0 && test.cartList.map(product => (
