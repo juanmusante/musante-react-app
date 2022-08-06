@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './Styles/Index.css';
 import App from './App';
 import './Styles/NavBar.css';
 import './Styles/ItemListContainer.css';

@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Musante-React-APP (Versión 1.0)
+![Imagen Inicio](https://firebasestorage.googleapis.com/v0/b/musante-react-app.appspot.com/o/imgPantallaInicio.png?alt=media&token=337c1d66-7fd6-4fcd-97ef-a87acf29a288)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Detalles de la aplicación :muscle:
+Proyecto básico, realizado en el curso de ReactJS de CoderHouse, impartido por el profesor [Alex Marín Mendez](https://github.com/alexmarinmendez).
+Simulación de una tienda de venta de máquinas para tatuar.
 
-## Available Scripts
+### Interacciones de la APP :mag:
+Desde el NavBar se puede tener acceso a la totalidad de productos desde la página de inicio y desde cualquier otra página, haciendo click en el nombre de la tienda. También se puede filtrar dentro de las tres opciones de categoría de productos. Y por último se tiene acceso al carrito de compras, que si está vacío se muestra como tal y se muestra un link a la página inicial para comenzar la compra.
+En el apartado de detalle por producto podemos seleccionar la cantidad deseada, pero con el limitante del stock con el que se cuenta.
+Al agregar los productos al carrito se dan dos opcines, seguir con la compra (que redirige a la página principal), o finalizarla y hacer checkout, enviandonos al carrito.
+Por último, en el carrito tenemos el detalle de los productos seleccionados con opciones de eliminar de manera individual o vaciar el carrito.
+También vemos el total de la compra a realizar y la opcion de generar la órden de compra. Esto nos genera un alerta (con [SweetAlert](https://sweetalert.js.org/guides/)), donde nos detalla el ID de la order y la genera en la base de datos.
 
-In the project directory, you can run:
+### Detalle :package:
+Esta app es un simulador, sin fines de lucro, creada para aprender y mejorar.
 
-### `npm start`
+### Construido con :wrench:
+- `HTML`
+- `CSS`
+- `JavaScript`
+- `ReactJS`
+- `Bootstrap`
+- `SweetAlert`
+- `FireBase`
+- `React-Router-DOM`
+- `Reactstrap`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Autor :black_nib:
+- ** Juan Pedro Musante ** [Juan Pedro Musante](https://github.com/juanmusante)

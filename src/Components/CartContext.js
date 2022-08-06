@@ -1,4 +1,4 @@
-import { createContext, useState  } from "react";
+import { createContext, useState  } from 'react';
 
 export const CartContext = createContext();
 
@@ -16,11 +16,9 @@ const CartContextProvider = ({ children }) => {
                 img: product.img,
                 stock: product.stock,
                 qty: qty
-            }])
-            // aca se graba item y qty en el localStorage
+            }]);
         }else{
             found.qty += qty;
-            // found.qty -= stock;
         }
     }
 
@@ -30,7 +28,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const clear = () => {
-        setCartList([])
+        setCartList([]);
     }
 
     const calcItemsQty = () => {

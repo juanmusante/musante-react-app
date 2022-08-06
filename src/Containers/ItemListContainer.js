@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
-import ItemList from "../Components/ItemList";
-import Loading from "../Components/Loading";
-import { useParams } from "react-router";
-import { firestoreFetch } from "../Data/firestoreFetch";
-// import { db } from "../Data/firebaseConfig";
-// import { collection, getDocs } from "firebase/firestore";
-
+import React, { useEffect, useState } from 'react';
+import ItemList from '../Components/ItemList';
+import Loading from '../Components/Loading';
+import { useParams } from 'react-router';
+import { firestoreFetch } from '../Utils/FirestoreFetch';
 
 const ItemListContainer = () => {
   const [productList, setProductList] = useState([]);

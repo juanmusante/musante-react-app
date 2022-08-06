@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import ItemDetail from '../Components/ItemDetail';
-import Loading from "../Components/Loading";
+import Loading from '../Components/Loading';
 import { useParams } from "react-router";
-// import { doc, getDoc } from "firebase/firestore";
-// import { db } from "../Data/firebaseConfig";
-import { firestoreFetchDetail } from '../Data/firestoreFetch';
-
-
+import { firestoreFetchDetail } from '../Utils/FirestoreFetch';
 
 const ItemDetailContainer = () => {
   const [productDetail, setProductDetail] = useState({});
@@ -20,24 +16,24 @@ const ItemDetailContainer = () => {
       .catch(err => console.log(err))
   }, [idItem])
 
-function loadingChange() {
-  setLoading(false);
-}
-setTimeout(loadingChange, 500);
+  function loadingChange() {
+    setLoading(false);
+  }
+  setTimeout(loadingChange, 500);
 
-if (loading) {
+  if (loading) {
+    return (
+      <Loading />
+    )
+  }
+
   return (
-    <Loading />
-  )
-}
-
-return (
-  <>
-    <div className="products">
-      <ItemDetail product={productDetail} />
-    </div>
-  </>
-);
+    <>
+      <div className="products">
+        <ItemDetail product={productDetail} />
+      </div>
+    </>
+  );
 
 }
 

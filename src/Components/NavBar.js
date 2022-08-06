@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ product }) => {
+const NavBar = () => {
     return(
         <header className="App-header shadow p-3 mb-5 bg-body rounded">
             <Link to="/"><h1 className="logo">TATT00 SH0P</h1></Link>

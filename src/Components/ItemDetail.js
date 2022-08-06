@@ -3,11 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCount from '../Components/ItemCount';
 import { Link } from "react-router-dom";
 import { CartContext } from '../Components/CartContext';
-// import { Button } from 'react-bootstrap';
 
-const ItemDetail = ({ product, number }) => {
-    const [quantity, setQuantity] = useState(true)
-    const test = useContext(CartContext)
+const ItemDetail = ({ product }) => {
+    const [quantity, setQuantity] = useState(true);
+    const test = useContext(CartContext);
 
     const onAdd = (qty) => {
         if(qty !== 0){

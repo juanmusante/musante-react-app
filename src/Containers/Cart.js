@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import { CartContext } from '../Components/CartContext'
-import { Link } from "react-router-dom";
+import React, { useContext } from 'react';
+import { CartContext } from '../Components/CartContext';
+import { Link } from 'react-router-dom';
 import { collection, serverTimestamp, setDoc, doc, increment, updateDoc } from 'firebase/firestore';
-import { db } from "../Data/firebaseConfig";
+import { db } from '../Utils/FirebaseConfig';
+import swal from 'sweetalert';
 
 const Cart = () => {
-  const test = useContext(CartContext)
-  // aca se comprueba si el localStorage esta vacio o no, para mostrarlo
+  const test = useContext(CartContext);
 
   const createOrder = () => {
     let itemsInCart = test.cartList.map(item => ({
@@ -14,11 +14,11 @@ const Cart = () => {
       title: item.modelo,
       price: item.precio,
       qty: item.qty
-    }))
+    }));
 
     let order = {
       buyer: {
-        email: "richard@supermail.com",
+        email: "ricardo@supermail.com",
         name: "Ricardo Sarambrotto",
         phone: "28873649"
       },
@@ -26,7 +26,7 @@ const Cart = () => {
       items: itemsInCart,
       total: test.calcItemsTotal()
     }
-    // console.log(order)
+    
     const createOrderInFirestore = async () => {
       const newOrderRef = doc(collection(db, "orders"))
       await setDoc(newOrderRef, order)
@@ -34,7 +34,7 @@ const Cart = () => {
     }
 
     createOrderInFirestore()
-      .then(res => alert('Tu orden fue creada con el siguiente ID:' + res.id))
+      .then(res => swal("Tu orden fue creada con el siguiente ID:" + res.id, "", "success"))
       .catch(err => console.log(err))
 
     test.cartList.forEach(async (item) => {
@@ -43,9 +43,8 @@ const Cart = () => {
         stock: increment(-item.qty)
       })
     })
-
-    // vaciar carrito luego de crear orden
-    test.clear()
+    
+    test.clear();
   }
 
   return (
